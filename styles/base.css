@@ -1,0 +1,243 @@
+:root {
+    --deep-green: #14532d;
+    /* nav bar / footer */
+    --mid-green: #1b7a43;
+    /* title bar / card headers */
+    --accent-green: #74c69d;
+    /* links, hover accent */
+    --bg-color: #f3f9f5;
+    --card-bg: #ffffff;
+    --text-color: #1f2d24;
+    --border-color: #d7e9de;
+
+    --heading-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    --body-font: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+}
+
+/* ---------- Header: title bar ---------- */
+#course-title {
+    display: block;
+    background-color: var(--mid-green);
+    color: #ffffff;
+    text-align: center;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 18px 16px;
+    letter-spacing: 0.3px;
+}
+
+/* ---------- Header: nav bar ---------- */
+header nav {
+    background-color: var(--deep-green);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    display: block;
+    color: var(--accent-green);
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 24px;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 8px;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+    color: #ffffff;
+}
+
+header nav a:hover::after,
+header nav a:focus::after {
+    transform: scaleX(1);
+}
+
+/* ---------- Main: centered, limited width, grid of cards ---------- */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+main h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--deep-green);
+    margin-bottom: 8px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(20, 83, 45, 0.08);
+}
+
+.card h2 {
+    background-color: var(--mid-green);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+}
+
+.card h3 {
+    color: var(--deep-green);
+    padding: 0 16px;
+    margin-top: 16px;
+    font-size: 1rem;
+}
+
+.card p {
+    padding: 0 16px;
+    line-height: 1.6;
+}
+
+.card hr {
+    margin: 20px 16px 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+
+.card_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 16px 0;
+}
+
+.card_row p {
+    flex: 2 1 200px;
+    padding: 0;
+}
+
+.card_row_reverse {
+    flex-direction: row-reverse;
+}
+
+.profile_photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex: 0 0 auto;
+}
+
+.card_row figure {
+    flex: 1 1 140px;
+    max-width: 160px;
+    margin: 0;
+    text-align: center;
+}
+
+.card_row figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+.card_row figcaption {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--deep-green);
+}
+
+/* ---------- Web Dev Resources list ---------- */
+.resource_list {
+    list-style: disc;
+    padding: 16px 16px 20px 32px;
+}
+
+.resource_list li {
+    margin-bottom: 10px;
+}
+
+.resource_list a {
+    color: var(--mid-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.resource_list a:hover,
+.resource_list a:focus {
+    text-decoration: underline;
+    color: var(--deep-green);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--deep-green);
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 16px;
+    font-family: var(--body-font);
+}
+
+footer p:first-child {
+    font-size: 0.95rem;
+}
+
+footer #lastModified {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: var(--accent-green);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 500px) {
+    .card_row,
+    .card_row_reverse {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

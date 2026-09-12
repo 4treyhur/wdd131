@@ -8,50 +8,77 @@
     <meta name="description" content="Aaron Pazaran's BYU Idaho WDD 131 course home page">
     <meta name="author" content="Aaron Ali Pazaran Hernandez">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
     <header>
-        <div class="course-title">
-            <nav>
-                <ul>
-                    <li><a href="linkedin">Linkedin</a></li>
-                    <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-                    <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a></li>
-                    <li><a href="final_project">Final Project</a></li>
-                </ul>
-            </nav> 
-        </div>
+        <span id="course-title">WDD 131 &ndash; Dynamic Web Fundamentals</span>
+        <nav>
+            <ul>
+                <li><a href="linkedin">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a></li>
+                <li><a href="final_project">Final Project</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <h1>Aaron Pazaran| WDD 131</h1>
-        <img src="images/profile.jpg" alt="Monumental Pachuca's Clock Tower." width="200">
-        <p>Hello! My name is Aarón Pazarán, and I am from Pachuca, Hidalgo, Mexico. I am passionate
-            about
-            programming and web development. I enjoy learning new technologies, building websites,
-            and improving
-            my coding skills. My goal is to grow as a developer, gain experience, and create useful
-            digital
-            solutions. I am excited to continue learning and developing my skills in the technology
-            field.</p>
+        <h1>Aar&oacute;n Pazar&aacute;n</h1>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="card_row">
+                <p>Hello! My name is Aar&oacute;n Pazar&aacute;n, and I am from Pachuca, Hidalgo,
+                    Mexico. I am passionate about programming and web development. I enjoy
+                    learning new technologies, building websites, and improving my coding skills.
+                    My goal is to grow as a developer, gain experience, and create useful digital
+                    solutions. I am excited to continue learning and developing my skills in the
+                    technology field.</p>
+                <img src="images/profile.jpg" alt="Aar&oacute;n Pazar&aacute;n" class="profile_photo">
+            </div>
+
+            <hr>
+
+            <h3>Pachuca, Hidalgo</h3>
+            <div class="card_row card_row_reverse">
+                <figure>
+                    <img src="images/reloj_pachuca.jpg" alt="Monumental Clock Tower in Pachuca, Mexico">
+                    <figcaption>Reloj Monumental de Pachuca</figcaption>
+                </figure>
+                <p>"Pachuca (from the Nahuatl Pachyohkan, meaning &ldquo;Place of Hay&rdquo; or
+                    &ldquo;Narrow Place&rdquo;), officially known as Pachuca de Soto, is a Mexican
+                    city, the municipal seat of the Municipality of Pachuca de Soto and the capital
+                    of the state of Hidalgo. According to the 2020 Population and Housing Census
+                    conducted by INEGI, the city has a population of 297,848 inhabitants. It is
+                    located 96 km (60 miles) north of Mexico City, in the eastern region of Mexico
+                    and within the geographic region of the state of Hidalgo known as the Mining
+                    District (Comarca Minera)." &ndash; Wikipedia</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <ul class="resource_list">
+                <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+                <li><a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer">The Odin Project</a></li>
+                <li><a href="https://picsum.photos/" target="_blank" rel="noopener noreferrer">Lorem Picsum Image Placeholder</a></li>
+            </ul>
+        </section>
     </main>
-    <aside>
-        <h2>Pachuca</h2>
-        <img src="images/reloj_pachuca.jpg" alt="México Pachuca.">
-        <p>"Pachuca (from the Nahuatl Pachyohkan, meaning "Place of Hay" or "Narrow Place"),
-            officially known as
-            Pachuca de Soto,is a Mexican city, the municipal seat of the Municipality of Pachuca de
-            Soto and the capital of the
-            state of Hidalgo. According to the 2020 Population and Housing Census conducted by
-            INEGI, the city has a population of
-            297,848 inhabitants. It is located 96 km (60 miles) north of Mexico City, in the eastern
-            region
-            of Mexico and within the geographic region of the state of Hidalgo known as
-            the Mining District (Comarca Minera)."- wiki</p>
-    </aside>
+
     <footer>
-        <p>©2026 🦗 Aaron Pazaran 🦗 Pachuca, México</p>
+        <p>&copy;<span id="year"></span> Aar&oacute;n Pazar&aacute;n, Pachuca, M&eacute;xico</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 
