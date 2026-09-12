@@ -104,9 +104,15 @@ main {
     margin: 0 auto;
     padding: 32px 16px 48px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 24px;
     align-items: start;
+}
+
+@media (min-width: 700px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 main h1 {
@@ -152,33 +158,36 @@ main h1 {
 }
 
 .card_row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: flex-start;
-    padding: 16px 16px 0;
+    padding: 16px 16px 4px;
+}
+
+.card_row::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .card_row p {
-    flex: 2 1 200px;
     padding: 0;
-}
-
-.card_row_reverse {
-    flex-direction: row-reverse;
+    line-height: 1.7;
 }
 
 .profile_photo {
-    width: 120px;
-    height: 120px;
+    float: right;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 6px;
-    flex: 0 0 auto;
+    border-radius: 8px;
+    margin: 0 0 12px 16px;
+}
+
+.card_row_reverse figure {
+    float: left;
+    margin: 0 16px 12px 0;
 }
 
 .card_row figure {
-    flex: 1 1 140px;
-    max-width: 160px;
+    width: 150px;
     margin: 0;
     text-align: center;
 }
@@ -186,7 +195,7 @@ main h1 {
 .card_row figure img {
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 8px;
     display: block;
 }
 
@@ -239,11 +248,13 @@ footer #lastModified {
 }
 
 /* ---------- Small screens ---------- */
-@media (max-width: 500px) {
-    .card_row,
-    .card_row_reverse {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+@media (max-width: 420px) {
+    .profile_photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card_row figure {
+        width: 100px;
     }
 }
