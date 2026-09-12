@@ -3,7 +3,7 @@
     /* nav bar / footer */
     --mid-green: #1b7a43;
     /* title bar / card headers */
-    --accent-green: #74c69d;
+    --accent-green: #8fd4b3;
     /* links, hover accent */
     --bg-color: #f3f9f5;
     --card-bg: #ffffff;
@@ -30,6 +30,12 @@ h1,
 h2,
 h3 {
     font-family: var(--heading-font);
+}
+
+/* ---------- Header ---------- */
+header {
+    display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* ---------- Header: title bar ---------- */
