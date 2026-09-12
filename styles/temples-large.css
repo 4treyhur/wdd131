@@ -1,0 +1,67 @@
+/* ---------- Header: title and nav share one row ---------- */
+.header_bar {
+    padding: 16px 32px;
+}
+
+.site_title {
+    font-size: 1.35rem;
+}
+
+/* Hamburger button is mobile-only */
+.menu_toggle {
+    display: none;
+}
+
+/* ---------- Nav: always visible, laid out horizontally ---------- */
+header nav {
+    max-height: none;
+    overflow: visible;
+}
+
+header nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 32px;
+}
+
+header nav a {
+    padding: 14px 20px;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+}
+
+header nav a:hover::after,
+header nav a:focus::after {
+    transform: scaleX(1);
+}
+
+/* ---------- Main: wider column, 3-across figure grid ---------- */
+main {
+    max-width: 1100px;
+    padding: 40px 32px 64px;
+    gap: 28px;
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+main {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+figcaption {
+    font-size: 0.95rem;
+}
