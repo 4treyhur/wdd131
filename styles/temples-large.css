@@ -1,67 +1,71 @@
-/* ---------- Header: title and nav share one row ---------- */
-.header_bar {
-    padding: 16px 32px;
-}
+/* ==========================================================
+   Large-view overrides. Everything below only applies at
+   700px and wider; temples.css holds the mobile-first base.
+   ========================================================== */
+@media (min-width: 700px) {
 
-.site_title {
-    font-size: 1.35rem;
-}
+    /* ---------- Header: title and nav share one row ---------- */
+    .header_bar {
+        padding: 16px 32px;
+    }
 
-/* Hamburger button is mobile-only */
-.menu_toggle {
-    display: none;
-}
+    .site_title {
+        font-size: 1.35rem;
+    }
 
-/* ---------- Nav: always visible, laid out horizontally ---------- */
-header nav {
-    max-height: none;
-    overflow: visible;
-}
+    /* Hamburger button is mobile-only */
+    .menu_toggle {
+        display: none;
+    }
 
-header nav ul {
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 0 32px;
-}
+    /* ---------- Nav: always visible, laid out horizontally ---------- */
+    header nav {
+        max-height: none;
+        overflow: visible;
+    }
 
-header nav a {
-    padding: 14px 20px;
-}
+    header nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0 32px;
+    }
 
-header nav a::after {
-    content: "";
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: 8px;
-    height: 2px;
-    background-color: #ffffff;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.25s ease;
-}
+    header nav a {
+        padding: 14px 20px;
+    }
 
-header nav a:hover::after,
-header nav a:focus::after {
-    transform: scaleX(1);
-}
+    header nav a::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 8px;
+        height: 2px;
+        background-color: #ffffff;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+    }
 
-/* ---------- Main: wider column, 3-across figure grid ---------- */
-main {
-    max-width: 1100px;
-    padding: 40px 32px 64px;
-    gap: 28px;
-}
+    header nav a:hover::after,
+    header nav a:focus::after {
+        transform: scaleX(1);
+    }
 
-main h1 {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
+    /* ---------- Main: wider column, 3-across figure grid ---------- */
+    main {
+        max-width: 1100px;
+        padding: 40px 32px 64px;
+        gap: 28px;
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-main {
-    grid-template-columns: repeat(3, 1fr);
-}
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
 
-figcaption {
-    font-size: 0.95rem;
+    figcaption {
+        font-size: 0.95rem;
+    }
 }
