@@ -1,0 +1,120 @@
+:root {
+    --mx-green: #006847;
+    --mx-red: #ce1126;
+    --mx-white: #ffffff;
+    --text-color: #24291f;
+    --bg-color: #faf8f3;
+    --muted-text: #4d5a4f;
+
+    --heading-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    --body-font: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: var(--mx-green);
+    border-bottom: 8px solid var(--mx-red);
+    padding: 20px 16px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--mx-white);
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- Hero + overlapping cards ---------- */
+.hero_wrap {
+    position: relative;
+}
+
+.hero_image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    background-color: var(--mx-white);
+    width: 92%;
+    max-width: 360px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    position: relative;
+    z-index: 2;
+}
+
+.hero_wrap .card:first-of-type {
+    margin-top: -40px;
+}
+
+.card h2 {
+    background-color: var(--mx-red);
+    color: var(--mx-white);
+    padding: 10px 16px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.weather_icon_svg {
+    width: 22px;
+    height: 22px;
+}
+
+.card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+    padding: 16px;
+}
+
+.card dt {
+    font-weight: 600;
+    color: var(--muted-text);
+    text-align: right;
+}
+
+.card dd {
+    text-align: left;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--mx-green);
+    border-top: 8px solid var(--mx-red);
+    color: var(--mx-white);
+    text-align: center;
+    padding: 18px 16px;
+}
+
+footer p:first-child {
+    font-size: 0.95rem;
+}
+
+footer #lastModified {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: #cfe9dd;
+}

@@ -1,0 +1,61 @@
+/* ==========================================================
+   Large-view overrides. Everything below only applies at
+   700px and wider; place.css holds the mobile-first base.
+   ========================================================== */
+@media (min-width: 700px) {
+
+    header {
+        padding: 28px 16px;
+    }
+
+    header h1 {
+        font-size: 2.6rem;
+    }
+
+    /* ---------- Cards float over the hero image ---------- */
+    .card {
+        position: absolute;
+        width: 300px;
+        max-width: none;
+        margin: 0;
+    }
+
+    .hero_wrap .card:first-of-type {
+        margin-top: 0;
+    }
+
+    .data_card {
+        top: 24px;
+        left: 24px;
+    }
+
+    .weather_card {
+        bottom: 24px;
+        right: 24px;
+        width: 260px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Mobile uses an SVG image for the weather icon; large view swaps
+       it for an emoji delivered through a pseudo-element instead. */
+    .weather_icon_svg {
+        display: none;
+    }
+
+    .weather_card h2::after {
+        content: "\26C5";
+        font-size: 1.3rem;
+        line-height: 1;
+    }
+
+    footer {
+        padding: 24px 16px;
+    }
+
+    footer p:first-child {
+        font-size: 1.05rem;
+    }
+}
