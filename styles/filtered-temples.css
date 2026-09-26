@@ -1,0 +1,157 @@
+:root {
+    --deep-green: #14532d;
+    /* nav bar / footer */
+    --mid-green: #1b7a43;
+    /* title bar / figure captions */
+    --accent-green: #8fd4b3;
+    /* links, hover accent */
+    --bg-color: #f3f9f5;
+    --card-bg: #ffffff;
+    --text-color: #1f2d24;
+    --border-color: #d7e9de;
+
+    --heading-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    --body-font: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+h1 {
+    font-family: var(--heading-font);
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: var(--mid-green);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+}
+
+.site_title {
+    color: #ffffff;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Hamburger button: mobile only (hidden again in temples-large.css) */
+.menu_toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* ---------- Nav: flex, collapsible on mobile ---------- */
+header nav {
+    background-color: var(--deep-green);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+header nav.nav_open {
+    max-height: 300px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+header nav a {
+    display: block;
+    color: var(--accent-green);
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 20px;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Main: centered, limited width, 1-column grid on mobile ---------- */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+main h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--deep-green);
+    margin-bottom: 4px;
+}
+
+/* ---------- Figures ---------- */
+figure {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(20, 83, 45, 0.08);
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--mid-green);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--deep-green);
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 16px;
+    font-family: var(--body-font);
+}
+
+footer p:first-child {
+    font-size: 0.95rem;
+}
+
+footer #lastModified {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: var(--accent-green);
+}
