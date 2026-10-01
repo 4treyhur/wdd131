@@ -97,6 +97,11 @@ header nav a:focus {
     background-color: rgba(255, 255, 255, 0.08);
 }
 
+header nav a.active {
+    color: #ffffff;
+    background-color: var(--mid-green);
+}
+
 /* ---------- Main: centered, limited width, 1-column grid on mobile ---------- */
 main {
     max-width: 960px;
@@ -114,27 +119,51 @@ main h1 {
     margin-bottom: 4px;
 }
 
-/* ---------- Figures ---------- */
-figure {
+/* ---------- Temple cards ---------- */
+.temple_cards {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.temple_card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(20, 83, 45, 0.08);
-    text-align: center;
+    text-align: left;
 }
 
-figure img {
+.temple_card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
-figcaption {
-    padding: 10px 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
+.temple_card figcaption {
+    padding: 12px 14px 16px;
+}
+
+.temple_card h2 {
+    font-family: var(--heading-font);
+    font-size: 1.05rem;
     color: var(--mid-green);
+    margin-bottom: 4px;
+}
+
+.temple_card .temple_location {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.temple_card .temple_detail {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.85;
 }
 
 /* ---------- Footer ---------- */
@@ -154,4 +183,25 @@ footer #lastModified {
     margin-top: 4px;
     font-size: 0.8rem;
     color: var(--accent-green);
+}
+
+/* ---------- Large viewport: horizontal nav, no hamburger, multi-column cards ---------- */
+@media (min-width: 700px) {
+    .menu_toggle {
+        display: none;
+    }
+
+    header nav {
+        max-height: none;
+        overflow: visible;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .temple_cards {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
 }
