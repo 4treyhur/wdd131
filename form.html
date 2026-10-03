@@ -2,25 +2,113 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 | Dynamic Web Fundamentals | Product Review Form</title>
-    <meta name="description" content="This is a product review form page sample">
-    <meta name="author" content="Aaron Ali Pazaran Hernandez">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 | Dynamic Web Fundamentals | Product Review Form</title>
+  <meta name="description" content="This is a product review form page sample">
+  <meta name="author" content="Aaron Ali Pazaran Hernandez">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="review.html">
-    <script src="scripts/getdates.js" defer></script>
+  <link rel="stylesheet" href="styles/base.css">
 
+  <script src="scripts/products.js" defer></script>
+  <script src="scripts/form.js" defer></script>
+  <script src="scripts/getdates.js" defer></script>
 </head>
+
 <body>
-    <footer>
-        <p>©<span id="year"></span> 🦗 Aaron Pazaran 🦗 Pachuca, México</p>
-        <p id="lastModified"></p>
-    </footer>
+  <header>
+    <h1>Product Review</h1>
+  </header>
+
+  <main>
+    <form action="review.html" method="get" class="card">
+
+      <div class="form-group">
+        <label for="productName">Product Name</label>
+        <select id="productName" name="productName" required>
+          <option value="" disabled selected>Select a Product ...</option>
+          <!-- Remaining options are populated dynamically by scripts/form.js -->
+        </select>
+      </div>
+
+      <fieldset class="form-group">
+        <legend>Overall Rating</legend>
+        <div class="rating">
+          <label class="rating-option" for="rating1">
+            <span class="stars" aria-hidden="true">&star;</span>
+            <input type="radio" id="rating1" name="rating" value="1" required>
+          </label>
+          <label class="rating-option" for="rating2">
+            <span class="stars" aria-hidden="true">&star;&star;</span>
+            <input type="radio" id="rating2" name="rating" value="2" required>
+          </label>
+          <label class="rating-option" for="rating3">
+            <span class="stars" aria-hidden="true">&star;&star;&star;</span>
+            <input type="radio" id="rating3" name="rating" value="3" required>
+          </label>
+          <label class="rating-option" for="rating4">
+            <span class="stars" aria-hidden="true">&star;&star;&star;&star;</span>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+          </label>
+          <label class="rating-option" for="rating5">
+            <span class="stars" aria-hidden="true">&star;&star;&star;&star;&star;</span>
+            <input type="radio" id="rating5" name="rating" value="5" required>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="installDate">Date of Installation</label>
+        <input type="date" id="installDate" name="installDate" required>
+      </div>
+
+      <fieldset class="form-group">
+        <legend>
+          Which features did you find useful in the product?
+          <span class="hint">(Check all that apply)</span>
+        </legend>
+        <div class="checkbox-group">
+          <label for="featureDurability">
+            <input type="checkbox" id="featureDurability" name="features" value="Durability">
+            Durability
+          </label>
+          <label for="featureEaseOfUse">
+            <input type="checkbox" id="featureEaseOfUse" name="features" value="Ease of Use">
+            Ease of Use
+          </label>
+          <label for="featurePerformance">
+            <input type="checkbox" id="featurePerformance" name="features" value="Performance">
+            Performance
+          </label>
+          <label for="featureDesign">
+            <input type="checkbox" id="featureDesign" name="features" value="Design">
+            Design
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="review">Written Review <span class="optional">(Optional)</span></label>
+        <textarea id="review" name="review" rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="userName">Your Name <span class="optional">(Optional)</span></label>
+        <input type="text" id="userName" name="userName">
+      </div>
+
+      <input type="submit" value="Post Review" class="submit-btn">
+    </form>
+  </main>
+
+  <footer>
+    <p>©<span id="year"></span> 🦗 Aaron Pazaran 🦗 Pachuca, México</p>
+    <p id="lastModified"></p>
+  </footer>
 </body>
+
 </html>

@@ -1,15 +1,303 @@
-:root {
-    --deep-green: #14532d;
-    /* nav bar / footer */
-    --mid-green: #1b7a43;
-    /* title bar / card headers */
-    --accent-green: #8fd4b3;
-    /* links, hover accent */
-    --bg-color: #f3f9f5;
-    --card-bg: #ffffff;
-    --text-color: #1f2d24;
-    --border-color: #d7e9de;
+/* ===================================================================
+   Product Review Form & Confirmation Page
+   Color scheme + typography per the project's established variables.
+=================================================================== */
 
-    --heading-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    --body-font: 'Inter', Arial, Helvetica, sans-serif;
+:root {
+  --deep-green: #14532d;
+  /* nav bar / footer */
+  --mid-green: #1b7a43;
+  /* title bar / card headers */
+  --accent-green: #8fd4b3;
+  /* links, hover accent */
+  --bg-color: #f3f9f5;
+  --card-bg: #ffffff;
+  --text-color: #1f2d24;
+  --border-color: #d7e9de;
+  --gold-star: #d6a419;
+
+  --heading-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --body-font: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+legend,
+label {
+  font-family: var(--heading-font);
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: var(--deep-green);
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Layout ---------- */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background-color: var(--card-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(20, 83, 45, 0.12);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ---------- Form groups ---------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group > label,
+fieldset > legend {
+  font-weight: 600;
+  color: var(--deep-green);
+  font-size: 1rem;
+}
+
+.optional,
+.hint {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--mid-green);
+}
+
+fieldset.form-group .hint {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+/* ---------- Inputs ---------- */
+select,
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+  padding: 0.65rem 0.75rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-green);
+  outline-offset: 1px;
+  border-color: var(--mid-green);
+}
+
+/* ---------- Fieldsets ---------- */
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem 1rem 1.1rem;
+  margin: 0;
+}
+
+legend {
+  padding: 0 0.4rem;
+}
+
+/* ---------- Overall rating (stars) ---------- */
+.rating {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.rating-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 400;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.rating-option .stars {
+  color: var(--gold-star);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.rating-option input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--mid-green);
+  cursor: pointer;
+}
+
+/* ---------- Checkboxes ---------- */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--body-font);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--mid-green);
+  cursor: pointer;
+}
+
+/* ---------- Submit button ---------- */
+.submit-btn {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--mid-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--heading-font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--deep-green);
+  outline: 3px solid var(--accent-green);
+  outline-offset: 1px;
+}
+
+/* ---------- Confirmation page ---------- */
+.confirmation h2 {
+  margin: 0 0 0.25rem;
+  color: var(--deep-green);
+}
+
+.confirmation-intro {
+  margin: 0 0 0.5rem;
+}
+
+.confirmation-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0.75rem;
+}
+
+.confirmation-list dt {
+  font-weight: 600;
+  color: var(--deep-green);
+  white-space: nowrap;
+}
+
+.confirmation-list dd {
+  margin: 0;
+}
+
+.review-counter {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--deep-green);
+  color: #e7f3ec;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 420px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .rating {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+
+  .rating-option {
+    flex: 1 1 30%;
+  }
+
+  .confirmation-list {
+    grid-template-columns: 1fr;
+    row-gap: 0.3rem;
+  }
+
+  .confirmation-list dd {
+    margin-bottom: 0.5rem;
+  }
 }
