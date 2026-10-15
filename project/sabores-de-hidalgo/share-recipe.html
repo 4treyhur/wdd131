@@ -26,6 +26,7 @@
   <main>
     <section class="page-title"><h1>Share Your Recipe</h1><p class="lead">Send us a family recipe or a comment about Hidalgo’s food traditions.</p></section>
     <section>
+      <h2 class="sr-only">Recipe form</h2>
       <form id="recipe-form" action="#" method="post">
         <div class="field"><label for="name">Your name</label><input type="text" id="name" name="name" required autocomplete="name"></div>
         <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required autocomplete="email"></div>
@@ -47,6 +48,11 @@
         <button type="submit" class="btn">Submit recipe</button>
       </form>
       <p id="form-message" class="form-message" role="status" hidden></p>
+    </section>
+    <section>
+      <h2>Your saved recipes</h2>
+      <p id="saved-empty">No recipes saved yet in this browser.</p>
+      <ul id="saved-list" class="saved-list"></ul>
     </section>
   </main>
   <footer>
